@@ -19,10 +19,10 @@ app.listen(3000, () => console.log('app listening on port 3000.'))
 
 /* The mock 'database' */
 let players = [
-  { id: 'cjeodaus60000poul1g030oia', name: 'Richard Garfield', imgName:'player1.jpg' },
-  { id: 'cjeodaus60001poule3wjdz1p', name: 'Sofia Newell', imgName:'player2.jpg' },
-  { id: 'cjeodaus60001poule4wjhz1n', name: 'Gabe Powers', imgName:'player3.jpg' },
-  { id: 'cjeodaus60001poule4ajyz1n', name: 'Colin Master', imgName:'player4.jpg' },
+  { id: 'cjeodaus60000poul1g030oia', name: 'Richard Garfield', countryCode: 'SE', age: 24, team:'Liquid',  imgName:'player1.jpg' },
+  { id: 'cjeodaus60001poule3wjdz1p', name: 'Sofia Newell', countryCode: 'PT', age: 21, team:' Astralis', imgName:'player2.jpg' },
+  { id: 'cjeodaus60001poule4wjhz1n', name: 'Gabe Powers', countryCode: 'NO', age: 27, team:'G2 Esports', imgName:'player3.jpg' },
+  { id: 'cjeodaus60001poule4ajyz1n', name: 'Colin Master', countryCode: 'SE', age: 30, team:'FaZe Clan', imgName:'player4.jpg' },
 ];
 
 /* IMPLEMENTATION DETAILS */

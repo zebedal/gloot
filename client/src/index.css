@@ -15,7 +15,7 @@
 }
 :root {
   --red: #e91e63;
-  --green: #00ff80;
+  --secondary: #E197A1;
 }
 * {
   padding: 0;
@@ -24,6 +24,10 @@
 }
 body {
   font-family: montserrat-regular;
+  font-size: 14px;
+}
+p {
+  line-height: 20px;
 }
 .container-100 {
   width: 100%;

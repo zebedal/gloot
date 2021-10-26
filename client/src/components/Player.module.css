@@ -3,21 +3,28 @@
     perspective: 1000px;
     position: relative;
     cursor: pointer;
-    
 }
-.Wrapper:hover > .Player{
-    transform: rotateY(-15deg) rotateX(5deg);
+.Wrapper:hover > .Player {
+    transform: rotateY(-15deg) rotateX(7deg);
+    outline-color: var(--red);
 }
-.Wrapper:hover > .Player >.ImgWrapper > img{
+.Wrapper:hover > .Player > .ImgWrapper > img {
     transform: scale(1.1);
+    filter: grayscale(1);
+}
+.Wrapper:hover .Actions {
+    transform: translateX(0);
 }
 .Player {
     position: relative;
-    border: 1px solid var(--red);
+    border: 1px solid rgba(233, 30, 99, 0.5);
     border-radius: 10px;
+    outline: 2px solid;
+    outline-color: transparent;
     overflow: hidden;
     transform-style: preserve-3d;
-    transition: all .5s ease;
+    backface-visibility: hidden;
+    transition: all 0.5s ease;
 }
 .ImgWrapper {
     height: 300px;
@@ -27,8 +34,50 @@
 .ImgWrapper > img {
     width: 100%;
     height: 100%;
-    transition: transform 2s;
+    transition: all 2s;
 }
 .Content {
+    padding: 15px 10px;
+    font-family: montserrat-regular;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Content > div:nth-child(2) {
+    text-align: center;
+    color: #B0003A;
+}
+.Actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
     padding: 10px;
+    transition: transform 0.3s ease;
+    transform: translateX(100px);
+}
+.Actions > div > svg {
+    display: block;
+    color: var(--red);
+    font-size: 28px;
+    margin: 10px 0;
+    transition: transform 0.2s;
+}
+.Actions > div > svg:hover {
+    transform: translateX(-3px);
+}
+.Name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.Age {
+    font-size: 11px;
+    color: #fff3f6;
+    font-family: montserrat-light;
 }

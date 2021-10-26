@@ -23,7 +23,13 @@ const PlayersList = props => {
                 <h1><span className={styles.Mix}>Players</span> List</h1>
             </div>
             <div className={`container ${styles.PlayersWrapper}`}>
-                {playersList.map(player => <Player key={player.id} name={player.name} img={player.imgName} />)}
+                {playersList.map(player => <Player 
+                key={player.id} 
+                name={player.name}
+                country={player.countryCode}
+                age={player.age} 
+                team={player.team} 
+                img={player.imgName} />)}
             </div>
         </section>
     )
