@@ -67,12 +67,15 @@ function deletePlayer(req, res) {
  * Body: { "name": "Steve Urkle" }
  */
 function putPlayer(req, res) {
-  const id = req.params.id;
+  const id = req.body.id;
   const name = req.body.name;
+  const age = req.body.age;
+  const team = req.body.team;
+
   if (!name) {
     return res.status(400).end();
   }
-  players = players.map(p => p.id == id ? { ...p, name } : p);
+  players = players.map(p => p.id == id ? { ...p, name, age, team } : p);
   return res.status(200).json(players.find(p => p.id == id)).end();
 }
 
@@ -82,5 +85,6 @@ function putPlayer(req, res) {
 function allowCorsMiddleware(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');      
   next();
 }

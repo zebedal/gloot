@@ -6,6 +6,8 @@ import Loader from './UI/Loader'
 const PlayersList = props => {
 
     const [playersList, setPlayersList] = useState(null)
+    const [selectedPlayer, setSelectedPlayer] = useState(null)
+    
 
     useEffect(() => {
         (async() => {
@@ -15,7 +17,29 @@ const PlayersList = props => {
         })();
     }, [])
 
-    if(!playersList) return <Loader />
+
+    const editPlayerHandler = playerId => {
+        if(selectedPlayer) {
+            setSelectedPlayer(null)
+            return
+        }
+        const selected = playersList.find(el => el.id === playerId)
+        setSelectedPlayer(selected)
+    }
+
+    const updatePlayer = async obj => {
+        const result = await fetch(`http://localhost:3000/player/${obj.id}`, {
+            method:'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(obj)
+        })
+        const data = await result.json()
+        console.log(data)
+    }
+
+    if(!playersList) return <div className="container"><Loader text="Loading players list..." /></div>
 
     return (
         <section className={styles.Section}>
@@ -23,13 +47,17 @@ const PlayersList = props => {
                 <h1><span className={styles.Mix}>Players</span> List</h1>
             </div>
             <div className={`container ${styles.PlayersWrapper}`}>
-                {playersList.map(player => <Player 
-                key={player.id} 
+                {!selectedPlayer && playersList.map(player => <Player 
+                key={player.id}
+                id={player.id} 
                 name={player.name}
-                country={player.countryCode}
+                countryCode={player.countryCode}
                 age={player.age} 
                 team={player.team} 
-                img={player.imgName} />)}
+                imgName={player.imgName}
+                handlePlayer={editPlayerHandler}
+                />)}
+                {selectedPlayer && <Player {...selectedPlayer}  handlePlayer={editPlayerHandler} update={updatePlayer} selected/>}
             </div>
         </section>
     )

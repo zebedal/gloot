@@ -3,6 +3,8 @@
     perspective: 1000px;
     position: relative;
     cursor: pointer;
+    max-width: 25%;
+    z-index: 1;
 }
 .Wrapper:hover > .Player {
     transform: rotateY(-15deg) rotateX(7deg);

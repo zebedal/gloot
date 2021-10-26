@@ -1,0 +1,25 @@
+.Button {
+    padding: 7px 25px;
+    background: var(--red);
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .3s;
+}
+.Button:hover {
+    opacity: .8;
+}
+.Button svg {
+    font-size: 22px;
+    margin-left: 10px;
+}
+.Button.nobg {
+    background: none;
+    border: 1px solid white;
+}
