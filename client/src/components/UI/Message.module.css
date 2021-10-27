@@ -1,0 +1,18 @@
+.Message {
+    color: white;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    
+}
+.Message.Success {
+    background: rgb(61, 160, 61);
+}
+.Message.Error {
+    background: var(--red)
+}

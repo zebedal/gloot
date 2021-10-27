@@ -34,7 +34,7 @@ const Loader = ({ text }) => (
                     repeatCount="indefinite" />
             </circle>
         </svg>
-        <p>{text}</p>
+        <p style={{color:'white'}}>{text}</p>
     </div>
 )
 

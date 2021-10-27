@@ -5,7 +5,7 @@ import ReactCountryFlag from "react-country-flag"
 import PlayerUpdateForm from './PlayerUpdateForm'
 import {Fragment } from 'react';
 
-const Player = ({ id, name, countryCode, imgName, age, team, handlePlayer, selected, update }) => {
+const Player = ({ id, name, countryCode, imgName, age, team, handlePlayer, deletePlayer, selected, update }) => {
 
     return (
         <Fragment>
@@ -30,7 +30,7 @@ const Player = ({ id, name, countryCode, imgName, age, team, handlePlayer, selec
                     </div>
                     <div className={styles.Actions}>
                         <div>
-                            <MdDeleteForever />
+                            <MdDeleteForever onClick={() => deletePlayer(id)} />
                             <MdEditNote onClick={() => handlePlayer(id)} />
                         </div>
                     </div>
