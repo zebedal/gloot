@@ -64,7 +64,7 @@ const PlayerCreateForm = ({ name, age, team, close, createPlayer }) => {
             <div className={styles.FormGroup}>
                 <input ref={teamRef} type="text" placeholder="Team" defaultValue={team} />
             </div>
-            <Button text="Save" marginTop={30} click={handleSubmit} disabled={countryState ? false : true} />
+            <Button text="Save" marginTop={40} click={handleSubmit} disabled={countryState ? false : true} />
         </div>
     )
 }
