@@ -46,10 +46,15 @@ function getPlayer(req, res) {
  * Body: { "name": "Fresh Prince" } */
 function addPlayer(req, res) {
   const name = req.body.name;
+  const age = req.body.age;
+  const team =  req.body.team;
+  const countryCode = req.body.country
+  const imgName= req.body.imgName
+ 
   if (!name) {
     return res.status(401).end()
   }
-  const newPlayer = { id: cuid(), name };
+  const newPlayer = { id: cuid(), name, age, team, countryCode, imgName };
   players = [...players, newPlayer];
   return res.status(201).json(newPlayer).end();
 }

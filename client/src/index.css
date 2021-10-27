@@ -29,12 +29,9 @@ body {
 p {
   line-height: 20px;
 }
-.container-100 {
-  width: 100%;
-  position: relative;
-}
 .container {
   position: relative;
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 15px;
 }

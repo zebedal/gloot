@@ -3,11 +3,13 @@ import Button from './UI/Button'
 import { MdClose } from "react-icons/md";
 import { useRef } from 'react';
 
+
 const PlayerUpdateForm = ({ name, age, team, closeForm, updatePlayer, id }) => {
 
     const nameRef = useRef()
     const ageRef = useRef()
     const teamRef = useRef()
+   
 
     const handleSubmit = () => {
         const obj = {

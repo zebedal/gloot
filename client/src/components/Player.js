@@ -3,9 +3,10 @@ import { MdDeleteForever, MdEditNote } from 'react-icons/md'
 import { SiTeamspeak } from "react-icons/si";
 import ReactCountryFlag from "react-country-flag"
 import PlayerUpdateForm from './PlayerUpdateForm'
-import {Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 const Player = ({ id, name, countryCode, imgName, age, team, handlePlayer, deletePlayer, selected, update }) => {
+
 
     return (
         <Fragment>
@@ -30,17 +31,23 @@ const Player = ({ id, name, countryCode, imgName, age, team, handlePlayer, delet
                     </div>
                     <div className={styles.Actions}>
                         <div>
-                            <MdDeleteForever onClick={() => deletePlayer(id)} />
-                            <MdEditNote onClick={() => handlePlayer(id)} />
+                            <MdDeleteForever onClick={() => deletePlayer(id)} title="Delete player" />
+                            <MdEditNote onClick={() => handlePlayer(id)} title="Edit player information" />
                         </div>
                     </div>
                 </div>
             </div>
-            {selected && <PlayerUpdateForm id={id} name={name} age={age} team={team} closeForm={handlePlayer} updatePlayer={update} />}
+            {selected && <PlayerUpdateForm
+                id={id}
+                name={name}
+                age={age}
+                team={team}
+                closeForm={handlePlayer}
+                updatePlayer={update} />}
         </Fragment>
     )
 }
 
 
 
-export default Player
+export default React.memo(Player)

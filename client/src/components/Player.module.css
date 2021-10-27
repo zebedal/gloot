@@ -1,9 +1,10 @@
 .Wrapper {
-    flex: 1;
+    flex: 1 20%;
+    max-width: 20%;
     perspective: 1000px;
     position: relative;
     cursor: pointer;
-    max-width: 25%;
+    min-width: 23%;
     z-index: 1;
 }
 .Wrapper:hover > .Player {
@@ -82,4 +83,16 @@
     font-size: 11px;
     color: #fff3f6;
     font-family: montserrat-light;
+}
+@media(max-width:920px) {
+    .Wrapper {
+        flex: 1 45%;
+        max-width: 50%;
+    }
+}
+@media(max-width:520px) {
+    .Wrapper {
+        flex: 1 100%;
+        max-width: 100%;
+    }
 }

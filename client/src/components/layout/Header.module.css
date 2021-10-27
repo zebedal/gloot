@@ -1,4 +1,17 @@
 .Header {
     height: 50px;
+    padding: 10px 0;
     background: black;
+}
+.FlexContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+.Logo {
+    display: flex;
+    align-items: center;
+}
+.Logo span {
+    color: var(--red);
+    font-family: montserrat-bold;
 }

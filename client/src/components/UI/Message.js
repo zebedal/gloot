@@ -1,10 +1,9 @@
 import styles from './Message.module.css'
 import ReactDOM from 'react-dom'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 const Message = ({ type , text, setShow, show }) => {
 
-console.log(type)
     useEffect(() => {
         setTimeout(() => {
             setShow(false)
